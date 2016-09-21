@@ -76,6 +76,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView setContentInset:UIEdgeInsetsMake(0,0,75,0)];
     
     self.navigationItem.title = @"Shots";
+    self.navigationController.hidesBarsOnSwipe = TRUE;
 }
 
 #pragma mark - Setup Cards
