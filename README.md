@@ -7,9 +7,8 @@ Hey, this is just a fun challenge using the Kamcord API to retrieve featured fee
 ----------
 ![enter image description here](http://i558.photobucket.com/albums/ss26/vincent_chau1/shots_zps0azrnvw6.jpg)
 
-Documents
+Random Remarks:
 -------------
 
-StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**
-
+It has been awhile since I have used a collectionview. This was overall a very fun project using Kamcord's Feed API. I also haven't tried playing videos on iOS apps until today and it takes less lines of code than I would of thought.
 
