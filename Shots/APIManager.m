@@ -23,7 +23,7 @@
     return _sharedInstance;
 }
 
-+ (void)reteiveHomeShotsJSON:(NSString *)endpointUrl withCompletion:(void (^)(NSError *error, NSArray *cards, NSString *feedId))block
++ (void)reteiveHomeShotsJSON:(NSString *)endpointUrl withCompletion:(void (^)(NSError *error, NSArray *cards, NSString *feedId, NSString *nextPage))block
 {
     NSURL *url = [NSURL URLWithString:endpointUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -41,14 +41,16 @@
             NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
             NSDictionary *jsonDict = (NSDictionary *)responseJSON;
             NSArray *groups = (NSArray *)jsonDict[@"groups"];
-            NSArray *allCards = ([(NSArray *)groups lastObject])[@"cards"];
-            NSString *feedID = ([(NSArray *)groups lastObject])[@"feedId"];
-            block(nil, allCards, feedID);
+            NSDictionary *groupInfo = ([(NSArray *)groups lastObject]);
+            NSArray *allCards = groupInfo[@"cards"];
+            NSString *feedID = groupInfo[@"feedId"];
+            NSString *nextPage = groupInfo[@"nextPage"];
+            block(nil, allCards, feedID, nextPage);
         }
         else
         {
             NSLog(@"%@",error.localizedDescription);
-            block(error, nil, nil);
+            block(error, nil, nil, nil);
         }
         
     }];
@@ -94,11 +96,10 @@
 + (void)downloadImagesWithUrl:(NSString *)url withCompletion:(void (^)(UIImage *image, bool success))block
 {
     NSCache *imgCache = ((AppDelegate *)[UIApplication sharedApplication].delegate).imgCache;
-    UIImage *current = [imgCache objectForKey:url];
+    UIImage *cachedImg = [imgCache objectForKey:url];
     
-    if (!current) // Not in cache
+    if (!cachedImg) // Not in cache
     {
-        
         NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             
             if (response)
@@ -112,7 +113,7 @@
                             block(image, true);
                             [imgCache setObject:image forKey:url];
                         }
-                        else // Corrupted jpg, use placeholder
+                        else // Corrupted jpg, use placeholder (image 7 is corrupted)
                         {
                             UIImage *badImage = [UIImage imageNamed:@"badImage"];
                             [imgCache setObject:badImage forKey:url];
@@ -125,9 +126,9 @@
         [task resume];
 
     }
-    else // Image is in cache
+    else // In Cache
     {
-        block(current, true);
+        block(cachedImg, true);
     }
 
 }

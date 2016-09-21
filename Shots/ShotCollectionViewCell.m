@@ -14,7 +14,7 @@
 
 - (UIImageView *)imageView
 {
-
+    
     if (!_imageView)
     {
         CGSize contentSize = self.contentView.bounds.size;
@@ -67,14 +67,11 @@
 
 - (void)configureCellWith:(Card *)card
 {
-
     [self addStyling];
     
     [APIManager downloadImagesWithUrl:card.thumbnailImgUrl withCompletion:^(UIImage *image, bool success) {
-    
         self.imageView.image = image;
         self.likesLabel.text = [NSString stringWithFormat:@"♡ %@", card.heartCount];
-    
     }];
 }
 

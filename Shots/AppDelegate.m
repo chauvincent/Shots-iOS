@@ -17,24 +17,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    
+    [self setupNav];
     
     if (!self.imgCache)
     {
         self.imgCache = [[NSCache alloc] init];
     }
-
+   
+    return YES;
+}
+- (void)setupNav
+{
     UIColor *greenColor = [UIColor colorWithRed:45/255.0 green:187/255.0 blue:40/255.0 alpha:1.0];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : greenColor, NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0]}];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTranslucent:NO];
-  
-    
-    return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

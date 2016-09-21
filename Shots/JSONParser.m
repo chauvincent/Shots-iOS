@@ -8,6 +8,9 @@
 
 #import "JSONParser.h"
 
+#define IDIOM    UI_USER_INTERFACE_IDIOM()
+#define IPAD     UIUserInterfaceIdiomPad
+
 @implementation JSONParser
 
 - (instancetype)init
@@ -28,7 +31,7 @@
     {
         NSDictionary *shotCardData = cardInfo[@"shotCardData"];
         NSString *heartCount = shotCardData[@"heartCount"];
-        NSString *thumbnailUrl = shotCardData[@"shotThumbnail"][@"medium"];
+        NSString *thumbnailUrl = shotCardData[@"shotThumbnail"][@"small"];
         NSString *videoUrl = shotCardData[@"play"][@"mp4"];
         
         Card *card = [[Card alloc] initWithHeartCount:heartCount thumbImgUrl:thumbnailUrl videoUrl:videoUrl];

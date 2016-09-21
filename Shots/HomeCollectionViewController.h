@@ -10,8 +10,4 @@
 
 @interface HomeCollectionViewController : UICollectionViewController
 
-@property (strong, nonatomic) NSMutableArray *cards;
-@property (strong, nonatomic) NSString *feedId;
-@property (strong, nonatomic) NSString *nextPage;
-
 @end

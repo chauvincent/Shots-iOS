@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75CC2EB11D928D910002B63B /* testingJSON2.json in Resources */ = {isa = PBXBuildFile; fileRef = 75CC2EB01D928D910002B63B /* testingJSON2.json */; };
+		758B36A91D92AF9200DC3817 /* testJSON2.json in Resources */ = {isa = PBXBuildFile; fileRef = 758B36A81D92AF9200DC3817 /* testJSON2.json */; };
 		75D3472B1D91E18200581BCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D3472A1D91E18200581BCF /* main.m */; };
 		75D3472E1D91E18200581BCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D3472D1D91E18200581BCF /* AppDelegate.m */; };
 		75D347341D91E18200581BCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D347321D91E18200581BCF /* Main.storyboard */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		75CC2EB01D928D910002B63B /* testingJSON2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testingJSON2.json; sourceTree = "<group>"; };
+		758B36A81D92AF9200DC3817 /* testJSON2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testJSON2.json; sourceTree = "<group>"; };
 		75D347261D91E18200581BCF /* Shots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D3472A1D91E18200581BCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		75D3472C1D91E18200581BCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		75D347291D91E18200581BCF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				75CC2EB01D928D910002B63B /* testingJSON2.json */,
+				758B36A81D92AF9200DC3817 /* testJSON2.json */,
 				75D347401D91E20C00581BCF /* testJSON.json */,
 				75D3472A1D91E18200581BCF /* main.m */,
 			);
@@ -204,9 +204,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D347391D91E18200581BCF /* LaunchScreen.storyboard in Resources */,
+				758B36A91D92AF9200DC3817 /* testJSON2.json in Resources */,
 				75D347361D91E18200581BCF /* Assets.xcassets in Resources */,
 				75D347341D91E18200581BCF /* Main.storyboard in Resources */,
-				75CC2EB11D928D910002B63B /* testingJSON2.json in Resources */,
 				75D347411D91E20C00581BCF /* testJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

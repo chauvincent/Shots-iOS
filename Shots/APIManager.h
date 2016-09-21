@@ -15,7 +15,8 @@
 }
 
 + (void)downloadImagesWithUrl:(NSString *)url withCompletion:(void (^)(UIImage *image, bool success))block;
-+ (void)reteiveHomeShotsJSON:(NSString *)endpointUrl withCompletion:(void (^)(NSError *error, NSArray *cards, NSString *feedId))block;
++ (void)reteiveHomeShotsJSON:(NSString *)endpointUrl withCompletion:(void (^)(NSError *error, NSArray *cards, NSString *feedId, NSString *nextPage))block;
+
 + (void)retreiveMoreFeedJSON:(NSString *)endpointUrl withCompletion:(void (^)(NSError *error, NSArray *cards, NSString *nextPage))block;
 
 @end
