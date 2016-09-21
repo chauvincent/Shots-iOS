@@ -11,4 +11,4 @@ Random Remarks:
 -------------
 
 It has been awhile since I have used a collectionview. This was overall a very fun project using Kamcord's Feed API. I also haven't tried playing videos on iOS apps until today and it took less lines of code than I thought it would.
-
+I did not use any 3rd party API besides Kamcord, it was fun sticking to NSURLSession.
